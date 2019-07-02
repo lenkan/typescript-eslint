@@ -82,6 +82,14 @@ export class Qux {
 }
         `,
     `
+import { ParameterDecoratorFactory } from 'decorators';
+export class Qux {
+   bar(@ParameterDecoratorFactory(true) baz: number = 0) {
+       console.log(baz);
+   }
+}
+        `,
+    `
 import { ParameterDecorator } from 'decorators';
 export class Foo {
    static greet(@ParameterDecorator name: string) {
